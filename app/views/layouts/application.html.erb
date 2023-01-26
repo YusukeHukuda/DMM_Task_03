@@ -11,16 +11,19 @@
   </head>
 
   <body>
-    <header class="navbar navbar-dark bg-dark navbar-light">
-      <div class="container-fluid">
-        <nav class="nav navbar-nav">
-      		<span class="navbar-brand">Bookers</span>
-      	</nav>
+    <header>
+      <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+      <div class="container">
+      		<%= link_to "Bookers", root_path, class: "navbar-brand" %>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <ul class="nav navbar-nav navbar-right navbar-brand">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
     <% if user_signed_in? %>
-      <li>
+      <li class="nav-item">
         <%= link_to " Home", user_path(current_user), class: "glyphicon glyphicon-home" %>
       </li>
       <li class="nav-item">
@@ -35,23 +38,24 @@
 
     <% else %>
       <li class="nav-item">
-        <%= link_to " Home",root_path %>
+        <%= link_to " Home",root_path, class: "nav-link text-light" %>
       </li>
       <li class="nav-item">
-        <%= link_to " About", home_about_path %>
+        <%= link_to " About", home_about_path, class: "nav-link text-light" %>
       </li>
       <li class="nav-item">
-        <%= link_to " Sign up", new_user_registration_path %>
+        <%= link_to " Sign up", new_user_registration_path, class: "nav-link text-light" %>
       </li>
       <li class="nav-item">
-      <%= link_to " login", user_session_path %>
+      <%= link_to " login", user_session_path, class: "nav-link text-light" %>
       </li>
     <% end %>
     </ul>
-    <p class="navbar-text">ようこそ ゲスト さん。</p>
-    </nav>
+    <!--<p class="navbar-text">welcome to Bookers!!</p>-->
     </div>
-  </header>
+    </div>
+  </nav>
+</header>
     <%= yield %>
   </body>
 </html>
