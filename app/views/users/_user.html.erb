@@ -1,0 +1,7 @@
+<table class="table">
+  <h2>User info</h2>
+    <thead>
+      <%= image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg"%>
+    </thead>
+  <h3><%= @user.name %></h3>
+</table>

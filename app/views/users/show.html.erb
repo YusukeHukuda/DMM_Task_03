@@ -1,2 +1,10 @@
-<h3><%= user.name %></h3>
-<%= render 'books/newbook', book: @book %>
+<div class="container ">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'users/user', user: @user %>
+      <%= render 'books/newbook', book: @book %>
+    </div>
+  <div class="col-md-9">
+    </div>
+  </div>
+</div>
