@@ -2,6 +2,15 @@
   <%= notice %>
 </p>
 
+  <% if @user.errors.any? %>
+      <h2><%= @user.errors.count %> errors prohibited this book from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+  <% end %>
+
 <%= form_with model: @user do |f| %>
 <div class="container">
  <div class="row">

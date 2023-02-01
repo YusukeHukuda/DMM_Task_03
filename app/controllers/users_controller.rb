@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
-  
+
   before_action :authenticate_user!
-  
+
   def index
-    @book = Book.new
     @users = User.all
-    @user = User.find(current_user.id)
+    @book = Book.new
+    @user = current_user
   end
 
   def show
@@ -29,7 +29,8 @@ class UsersController < ApplicationController
     if @user.update(user_params)
          redirect_to user_path(@user.id), notice: 'You have updated user successfully.'
     else
-         render "edit"
+
+      render "edit"
     end
   end
 end
