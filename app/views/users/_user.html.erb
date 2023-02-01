@@ -1,20 +1,20 @@
 <table class="table">
   <h2>User info</h2>
     <thead>
-      <%= image_tag @user.get_profile_image(100,100) %>
+      <%= image_tag user.get_profile_image(100,100) %>
     </thead>
 
     <tr>
       <th>Name</th>
-      <th><%= @user.name %></th>
+      <th><%= user.name %></th>
     </tr>
 
     <th>Introduction</th>
-      <th><%= @user.introduction %></th>
+      <th><%= user.introduction %></th>
     </tr>
 
 </table>
 
   <div class="row">
-      <%= link_to "画像", edit_user_path(user), class: "btn btn-outline-secondary fa-w-20 btn-block glyphicon glyphicon-wrench edit_user_profile" %>
+      <%= link_to "画像", edit_user_path(user), class: "btn btn-outline-secondary fa-w-20 glyphicon glyphicon-wrench edit_user_profile" %>
   </div>
